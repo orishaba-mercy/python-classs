@@ -7,6 +7,6 @@ class Orders(models.Model):
     delivery_adress=models.CharField(max_length=33)
     customer_contact=models.CharField(max_length=32)
     payment_status=models.BooleanField()
-    # items_ordered=models.JSONField()
+    
     order_status=models.CharField(max_length=32)
     payment_method=models.CharField(max_length=32)
