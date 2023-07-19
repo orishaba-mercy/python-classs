@@ -6,7 +6,7 @@ class Reviews(models.Model):
     product_name=models.TextField(max_length=10)
     rating=models.PositiveBigIntegerField()
     image=models.ImageField()
-    review_text=models.TextField(max_length=40)
+    # review_text=models.TextField(max_length=40)
     review_date=models.DateTimeField(auto_now=True)
     
 

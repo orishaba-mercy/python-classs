@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Delivery(models.Model):
+class Deliverys(models.Model):
     Customer_name=models.CharField(max_length=32)
     Delivery_adress=models.CharField(max_length=11)
     Delivery_method=models.CharField(max_length=12)
