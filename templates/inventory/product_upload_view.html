@@ -6,14 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <form  method = "POST" class="upload-form">
-        {% csrf_token%}
+    <h3>Products Upload</h3>
+    <form method="POST">
+        {% csrf_token %}
         {{form.as_p}}
-        
         <button type="submit">Save</button>
-        </form>
 
-    
+    </form>
     
 </body>
 </html>
