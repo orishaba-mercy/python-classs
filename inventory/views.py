@@ -1,11 +1,5 @@
-# from django.shortcuts import render
-# from .forms import ProductUploadForm
 
-# def product_upload_view(request):
-#     form = ProductUploadForm()
-#     return render(request , 'inventory/product_upload_view.html' , {'form': form})
-
-from django.shortcuts import render , redirect
+from django.shortcuts import render ,redirect
 from .forms import ProductUploadForm
 from .models import Product
 

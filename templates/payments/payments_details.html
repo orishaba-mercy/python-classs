@@ -60,13 +60,14 @@
     </style>
 </head>
 <body>
-    <h2>{{cart.products}}</h2>
-    <img src="{{cart.image.url}}" alt="{{cart.name}}"/>
-    <p>{{cart.name}}</p>
-    <span>{{cart.price}}</span>
-    <p>{{cart.total_amount}}</p>
-    <p>{{cart.date_created}}</p>
-    <p>{{cart.date_updated}}</p>
-    <button>Add to cart</button>
+    <h2>{{payments.customer_name}}</h2>
+    <p>{{payments.total_amount}}</p>
+    <p>{{payments.payment_status}}</p>
+    <p>{{payments.order_status}}</p>
+    <p>{{payments.payment_method}}</p>
+    <button>Pay Now</button>
 </body>
 </html>
+
+
+

@@ -10,23 +10,26 @@
             line-height: 1.6;
             margin: 0;
             padding: 20px;
-            background-color: #f2f2f2;
+            background-color: #d79c9c;
         }
 
         .allproducts {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            gap: 20px;
+          
         }
 
         .product-container {
             background-color: #fff;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
+            /* border-radius: 5px; */
             margin: 10px;
             padding: 20px;
             max-width: 300px;
             text-align: center;
+            border-radius: 10px;
         }
 
         .product-name {
@@ -63,19 +66,26 @@
      </style> 
 </head>
 <div class="allproducts">
-    {% for cart in carts %}
-    <div class="cart-container">       
-    <h2>{{cart.products}}</h2>
-    <p>{{cart.name}}</p>
-    <span>{{cart.price}}</span>
-    <p>{{cart.total_amount}}</p>
-    <p>{{cart.date_created}}</p>
-    <p>{{cart.date_updated}}</p>
-             <a href="{% url 'cart_detail' id=cart.id %}">View Details</a>
-             <a href="{% url 'cart_update_view' id=cart.id %}">Edit cart</a>
+    {% for customer in customers %}
+        <div class="cart-container">
+            <!-- <img src="{{customer.image.url}}" class="img"/> -->
+    <h1 class="cart-name">{{ payments.customer_name }}</h1> 
+    <p>{{payments.total_amount}}</p>
+    <span>{{payments.payment_status}}</span>
+    <p>{{payments.order_status}}</p>
+    <p>{{payments.payment_method}}</p>
+   
+             <a href="{% url 'payments_detail' id=payments.id %}">View Details</a>
+             <a href="{% url 'payments_update_view' id=payments.id %}">Edit Details</a>
         </div>
     {% endfor %}
 </div>
 </body>
 </html>
 
+<!-- class Payments(models.Model):
+    customer_name=models.CharField(max_length=32)
+    total_amount=models.DecimalField(decimal_places=4,max_digits=4)
+    payment_status=models.BooleanField()
+    order_status=models.CharField(max_length=32)
+    payment_method=models.CharField(max_length=32) -->

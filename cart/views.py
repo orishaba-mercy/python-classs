@@ -16,7 +16,7 @@ def cart_upload_view(request):
 
 def cart_list(request):
     cart = Cart.objects.all()
-    return render(request, 'cart/cart_list.html', {'cart':cart})
+    return render(request, 'cart/cart_list.html', {'carts':cart})
 
 
 def cart_detail(request , id):

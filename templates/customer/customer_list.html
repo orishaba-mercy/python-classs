@@ -10,23 +10,26 @@
             line-height: 1.6;
             margin: 0;
             padding: 20px;
-            background-color: #f2f2f2;
+            background-color: #d79c9c;
         }
 
         .allproducts {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            gap: 20px;
+          
         }
 
         .product-container {
             background-color: #fff;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
+            /* border-radius: 5px; */
             margin: 10px;
             padding: 20px;
             max-width: 300px;
             text-align: center;
+            border-radius: 10px;
         }
 
         .product-name {
@@ -63,19 +66,22 @@
      </style> 
 </head>
 <div class="allproducts">
-    {% for cart in carts %}
-    <div class="cart-container">       
-    <h2>{{cart.products}}</h2>
-    <p>{{cart.name}}</p>
-    <span>{{cart.price}}</span>
-    <p>{{cart.total_amount}}</p>
-    <p>{{cart.date_created}}</p>
-    <p>{{cart.date_updated}}</p>
-             <a href="{% url 'cart_detail' id=cart.id %}">View Details</a>
-             <a href="{% url 'cart_update_view' id=cart.id %}">Edit cart</a>
+    {% for customer in customers %}
+        <div class="cart-container">
+            <!-- <img src="{{customer.image.url}}" class="img"/> -->
+    <h1 class="cart-name">{{ customer.user }}</h1> 
+    <p>{{customer.first_name}}</p>
+    <span>{{customer.last_name}}</span>
+    <p>{{customer.email}}</p>
+    <p>{{customer.password}}</p>
+    <p>{{customer.date_created}}</p>
+    <p>{{customer.date_updated}}</p>
+             <a href="{% url 'customer_detail' id=customer.id %}">View Details</a>
+             <a href="{% url 'customer_update_view' id=customer.id %}">Edit Details</a>
         </div>
     {% endfor %}
 </div>
 </body>
 </html>
+
 
