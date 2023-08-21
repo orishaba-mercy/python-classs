@@ -66,7 +66,7 @@
      </style> 
 </head>
 <div class="allproducts">
-    {% for customer in customers %}
+    {% for payments in payments %}
         <div class="cart-container">
             <!-- <img src="{{customer.image.url}}" class="img"/> -->
     <h1 class="cart-name">{{ payments.customer_name }}</h1> 
@@ -75,17 +75,13 @@
     <p>{{payments.order_status}}</p>
     <p>{{payments.payment_method}}</p>
    
-             <a href="{% url 'payments_detail' id=payments.id %}">View Details</a>
+             <a href="{% url 'payments_details' id=payments.id %}">View Details</a>
              <a href="{% url 'payments_update_view' id=payments.id %}">Edit Details</a>
+             <!-- <a href="{% url 'cart_list'%}"><button class="add-to-cart-btn">Add to cart</button></a>
+       
         </div>
     {% endfor %}
 </div>
 </body>
 </html>
 
-<!-- class Payments(models.Model):
-    customer_name=models.CharField(max_length=32)
-    total_amount=models.DecimalField(decimal_places=4,max_digits=4)
-    payment_status=models.BooleanField()
-    order_status=models.CharField(max_length=32)
-    payment_method=models.CharField(max_length=32) -->

@@ -20,29 +20,25 @@ def payments_list(request):
     return render(request, 'payments/payments_list.html', {'payments':payments})
 
 
-def payments_detail(request , id):
+def payments_details(request , id):
     payments= Payments.objects.get(id=id)
-    return render(request , 'payments/payments_detail.html',{'payments':payments})
+    return render(request ,'payments/payments_details.html',{'payments':payments})
 
 
-
-
-def customer_update_view(request, id):
-    customer = Customer.objects.get(id=id)
-
-
+def payments_update_view(request, id):
+    payments=Payments.objects.get(id=id)
     if request.method == 'POST':
-        form = CustomerUploadForm(request.POST, instance=customer)
+        form = PaymentsUploadForm(request.POST, instance=payments)
 
         if form.is_valid():
             form.save()
-            return redirect("customer_detail", id=customer.id)
+            return redirect("payments_details", id=id)
     
     else:
-        form = CustomerUploadForm(instance=customer)
-        return render(request, "customer/edit_customer.html", {'form': form})
+        form = PaymentsUploadForm(instance=payments)
+        return render(request, "payments/edit_payments.html", {'form': form})
 
-def delete_customer(request, id):
-    customer= Customer.objects.get(id=id)
-    customer.delete()
-    return redirect("customer_list_view")
+def delete_payments(request, id):
+    payments= payments.objects.get(id=id)
+    payments.delete()
+    return redirect("payments_list_view")
