@@ -50,7 +50,9 @@ INSTALLED_APPS = [
     'Reviews',
     'Sales',
     'venders',
-    'customer'
+    'customer',
+    'rest_framework',
+    
 ]
 
 MIDDLEWARE = [

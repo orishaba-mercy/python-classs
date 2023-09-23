@@ -69,9 +69,7 @@
             <h1 class="product-name">{{ product.name }}</h1>
              <a href="{% url 'product_detail' id=product.id %}">View Details</a>
              <a href="{% url 'product_update_view' id=product.id %}">Edit Product</a>
-             <a href="{% url 'cart_list'%}"><button class="add-to-cart-btn">Add to cart</button></a>
-        <button class="add-to-cart-btn">Delete from Cart</button>    </div>
-             
+            
         </div>
     {% endfor %}
 </div>

@@ -12,7 +12,7 @@ urlpatterns=[
     path("carts/edit/<int:id>/", cart_update_view, name="cart_update_view"),
     path("carts /delete/ <int:id>/", delete_cart , name="delete_cart"),
 ]
-
+ 
 
 
 
